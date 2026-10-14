@@ -1,0 +1,385 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brew Haven | Coffee Shop</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f5ef;
+      color: #30251f;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 8%;
+      background: #30251f;
+      color: white;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      color: #d9a86c;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #d9a86c;
+    }
+
+    .hero {
+      min-height: 540px;
+      display: flex;
+      align-items: center;
+      padding: 70px 8%;
+      background: linear-gradient(
+        90deg,
+        rgba(35, 24, 18, .92),
+        rgba(35, 24, 18, .45)
+      ),
+      url("https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1600&q=80")
+      center/cover;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 550px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 68px);
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+
+    .hero p {
+      line-height: 1.8;
+      margin-bottom: 30px;
+      color: #eee1d4;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #d9a86c;
+      color: #30251f;
+      padding: 14px 25px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: .3s;
+    }
+
+    .btn:hover {
+      background: #efc895;
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: 75px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #78685c;
+      margin-bottom: 40px;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px #30251f12;
+      transition: .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 22px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #78685c;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      color: #96612f;
+      font-weight: bold;
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+
+    .about {
+      background: #eae0d3;
+      text-align: center;
+    }
+
+    .about p {
+      max-width: 650px;
+      margin: 20px auto;
+      line-height: 1.9;
+      color: #625044;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      margin: 15px 0 25px;
+      line-height: 1.8;
+    }
+
+    footer {
+      background: #30251f;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      font-size: 14px;
+    }
+
+    #cart-message {
+      margin-top: 20px;
+      color: #96612f;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        justify-content: center;
+      }
+
+      nav {
+        text-align: center;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 8px;
+      }
+
+      .hero {
+        min-height: 460px;
+      }
+
+      section {
+        padding: 55px 6%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">☕ Brew Haven</div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <h1>Your Daily Dose of Happiness.</h1>
+
+        <p>
+          Freshly brewed coffee, cozy vibes, and unforgettable
+          flavors. Your perfect coffee moment starts here.
+        </p>
+
+        <a href="#menu" class="btn">Explore Our Menu →</a>
+      </div>
+    </section>
+
+    <section id="menu">
+      <h2 class="section-title">Our Favorites</h2>
+      <p class="subtitle">Made with love, served with passion.</p>
+
+      <div class="menu-grid">
+
+        <article class="card">
+          <img
+            src="https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?auto=format&fit=crop&w=600&q=80"
+            alt="Fresh espresso coffee"
+          >
+          <div class="card-content">
+            <h3>Classic Espresso</h3>
+            <p>Rich, bold, and perfectly brewed coffee.</p>
+            <div class="price">₱100</div>
+            <button class="btn" onclick="addToCart('Classic Espresso', 100)">
+              Order Now
+            </button>
+          </div>
+        </article>
+
+        <article class="card">
+          <img
+            src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=600&q=80"
+            alt="Creamy iced latte"
+          >
+          <div class="card-content">
+            <h3>Iced Latte</h3>
+            <p>Smooth espresso with creamy, chilled milk.</p>
+            <div class="price">₱130</div>
+            <button class="btn" onclick="addToCart('Iced Latte', 130)">
+              Order Now
+            </button>
+          </div>
+        </article>
+
+        <article class="card">
+          <img
+            src="https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?auto=format&fit=crop&w=600&q=80"
+            alt="Cappuccino topped with milk foam"
+          >
+          <div class="card-content">
+            <h3>Cappuccino</h3>
+            <p>A beautiful balance of espresso and silky foam.</p>
+            <div class="price">₱120</div>
+            <button class="btn" onclick="addToCart('Cappuccino', 120)">
+              Order Now
+            </button>
+          </div>
+        </article>
+
+      </div>
+
+      <div style="text-align:center; margin-top:35px">
+        <h3>Your Order</h3>
+        <p id="cart-message" aria-live="polite">Your cart is empty.</p>
+        <p id="cart-total" style="margin:12px 0"></p>
+        <button class="btn" onclick="checkout()">Checkout</button>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <h2 class="section-title">A Little About Us</h2>
+
+      <p>
+        At Brew Haven, we believe that every cup tells a story.
+        We serve quality coffee in a welcoming space where friends
+        connect, ideas grow, and everyday moments become special.
+      </p>
+
+      <a href="#contact" class="btn">Visit Us</a>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2 class="section-title">Come Say Hello</h2>
+
+      <p>
+        Have a question or want to learn more?<br>
+        We'd love to hear from you!
+      </p>
+
+      <p>📍 Manila, Philippines</p>
+      <p>📧 hello@brewhaven.example</p>
+
+      <a class="btn"
+         href="mailto:hello@brewhaven.example?subject=Coffee%20Shop%20Inquiry">
+        Contact Us
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Brew Haven Coffee Shop. Made with ☕ and love.</p>
+  </footer>
+
+  <script>
+    const cart = [];
+
+    function addToCart(name, price) {
+      cart.push({ name, price });
+      updateCart();
+    }
+
+    function updateCart() {
+      const count = cart.length;
+      const total = cart.reduce((sum, item) => sum + item.price, 0);
+
+      document.getElementById("cart-message").textContent =
+        count === 0
+          ? "Your cart is empty."
+          : count + " item(s): " +
+            cart.map(item => item.name).join(", ");
+
+      document.getElementById("cart-total").textContent =
+        "Total: ₱" + total.toLocaleString("en-PH");
+    }
+
+    function checkout() {
+      if (cart.length === 0) {
+        alert("Please add a coffee to your cart first!");
+        return;
+      }
+
+      const total = cart.reduce((sum, item) => sum + item.price, 0);
+      const order = cart.map(item => item.name).join(", ");
+
+      alert(
+        "Thank you for choosing Brew Haven!\n\n" +
+        "Your order: " + order +
+        "\nTotal: ₱" + total.toLocaleString("en-PH") +
+        "\n\nDemo checkout only. No payment has been processed."
+      );
+    }
+  </script>
+
+</body>
+</html>
